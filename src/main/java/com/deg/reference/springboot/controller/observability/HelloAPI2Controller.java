@@ -1,4 +1,4 @@
-package com.deg.reference.springboot.controller;
+package com.deg.reference.springboot.controller.observability;
 
 import com.deg.reference.springboot.service.WebClientService;
 import lombok.AllArgsConstructor;
@@ -9,13 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.reactive.function.client.WebClient;
 
 @RestController
 @RequestMapping("/api/hello-api2/v1")
 @Log4j2
 @AllArgsConstructor
-public class HelloAPI2 {
+public class HelloAPI2Controller {
     private WebClientService service;
 
 

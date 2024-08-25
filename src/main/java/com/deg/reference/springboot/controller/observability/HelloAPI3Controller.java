@@ -1,4 +1,4 @@
-package com.deg.reference.springboot.controller;
+package com.deg.reference.springboot.controller.observability;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/hello-api3/v1")
 @Log4j2
 @AllArgsConstructor
-public class HelloAPI3 {
+public class HelloAPI3Controller {
 
     @GetMapping(value = "/live")
     public ResponseEntity<String> live() {

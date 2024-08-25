@@ -1,4 +1,4 @@
-package com.deg.reference.springboot.controller;
+package com.deg.reference.springboot.controller.observability;
 
 import com.deg.reference.springboot.service.WebClientService;
 import io.micrometer.tracing.Span;
@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.reactive.function.client.WebClient;
 
 /**
  * @author <a href="mailto:omarg@deguene.com">Omar Gaye</a>
@@ -20,7 +19,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 @RequestMapping("/api/hello-api1/v1")
 @Log4j2
 @AllArgsConstructor
-public class HelloAPI1 {
+public class HelloAPI1Controller {
 
     private Tracer tracer;
     private WebClientService service;
