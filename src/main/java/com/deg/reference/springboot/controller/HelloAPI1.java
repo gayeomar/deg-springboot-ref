@@ -1,7 +1,6 @@
 package com.deg.reference.springboot.controller;
 
 import com.deg.reference.springboot.service.WebClientService;
-import com.deg.reference.springboot.service.WebClientService2;
 import io.micrometer.tracing.Span;
 import io.micrometer.tracing.Tracer;
 import lombok.AllArgsConstructor;
@@ -38,6 +37,7 @@ public class HelloAPI1 {
         log.info("From API1, received: {}", api2Return);
         return new ResponseEntity<String>(api2Return, HttpStatus.OK);
     }
+
 
     public void testTracer() {
         Span currentSpan = tracer.currentSpan();

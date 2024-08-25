@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
-  <Appenders>
-    <Console name="Console" target="SYSTEM_OUT">
-      <!--
-      <pattern>app=${appName},host=${HOSTNAME},traceID=%X{traceId:-NONE},level=%level</pattern>
-      -->
-      <PatternLayout
-        pattern="[%date{ISO8601}] [%-5level] [%thread] [X-B3-TraceId=%MDC{traceId},X-B3-SpanId=%MDC{spanId}] %logger{1.}.%method#%line - %message%n"/>
-    </Console>
-  </Appenders>
-  <Loggers>
-    <Logger name="com.deg" level="INFO" additivity="false">
-      <AppenderRef ref="Console"/>
-    </Logger>
-    <Root level="ERROR">
-      <AppenderRef ref="Console"/>
-    </Root>
-  </Loggers>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <!--
+            <pattern>app=${appName},host=${HOSTNAME},traceID=%X{traceId:-NONE},level=%level</pattern>
+            -->
+            <PatternLayout
+                    pattern="[%date{ISO8601}] [%-5level] [%thread] [X-B3-TraceId=%MDC{traceId},X-B3-SpanId=%MDC{spanId}] %logger{1.}.%method#%line - %message%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.deg" level="INFO" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Root level="ERROR">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
 </Configuration>
 
-<!--
-<configuration>
-	<jmxConfigurator />
-	<include resource="org/springframework/boot/logging/logback/defaults.xml" />
-	<springProperty scope="context" name="springAppName" source="spring.application.name" />
-	<property name="PATTERN"
-		value="date=%date{ISO8601} severity=%-5level service=${springAppName:-} X-B3-TraceId=%X{X-B3-TraceId:-} X-B3-SpanId=%X{X-B3-SpanId:-} pid=${PID:-} message=%msg  thread=%thread logger=%logger{36}%n " />
-	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-		<encoder class="com.magenic.poc.trace.util.PocPatternLayoutEncoderBase">
-			<pattern>${PATTERN}</pattern>
-		</encoder>
-	</appender>
-	<root level="INFO">
-		<appender-ref ref="CONSOLE" />
-	</root>
-</configuration>
--->
+        <!--
+        <configuration>
+            <jmxConfigurator />
+            <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+            <springProperty scope="context" name="springAppName" source="spring.application.name" />
+            <property name="PATTERN"
+                value="date=%date{ISO8601} severity=%-5level service=${springAppName:-} X-B3-TraceId=%X{X-B3-TraceId:-} X-B3-SpanId=%X{X-B3-SpanId:-} pid=${PID:-} message=%msg  thread=%thread logger=%logger{36}%n " />
+            <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+                <encoder class="com.magenic.poc.trace.util.PocPatternLayoutEncoderBase">
+                    <pattern>${PATTERN}</pattern>
+                </encoder>
+            </appender>
+            <root level="INFO">
+                <appender-ref ref="CONSOLE" />
+            </root>
+        </configuration>
+        -->

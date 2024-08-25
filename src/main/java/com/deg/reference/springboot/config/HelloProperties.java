@@ -7,7 +7,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties(prefix="com.deg")
+@ConfigurationProperties(prefix = "com.deg")
 @Getter
 @Setter
 public class HelloProperties {

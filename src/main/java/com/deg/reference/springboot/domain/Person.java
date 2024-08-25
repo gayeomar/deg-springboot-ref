@@ -16,7 +16,7 @@ public class Person {
     private String lastName;
 
     @PostConstruct
-    public void init() throws Exception{
+    public void init() throws Exception {
         System.out.println(
                 "Bean Person has been "
                         + "instantiated and I'm "
@@ -24,7 +24,7 @@ public class Person {
     }
 
     @PreDestroy
-    public void destroy() throws Exception{
+    public void destroy() throws Exception {
         System.out.println(
                 "Container has been closed "
                         + "and I'm the destroy() method");
