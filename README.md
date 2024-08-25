@@ -1,26 +1,47 @@
-# deg-springboot-ref
+# DCAC Spring Boot Reference
 
-DCAC Spring Boot Reference
-
-Development environment:
-Spring Boot version: 3.3.2
-Java version: GraalVM JDK 22.0.2
-Gradle version: 8.8
+###     Omar Gaye
+###     Last update: 2024-08-25
 
 
-Topics:
-API documentation
-Web client
-Observability
-Distributed Tracing
-Circuit breaker
-Containerization
-OpenSfhit Deployment
-Service Mesh
-Native image
-API Gateway
+# WORK IN PROGRESS
 
-Workshops:
+## Development environment:
+* Spring Boot version: 3.3.2
+* Spring Cloud version: 2023.0.2
+* Java version: GraalVM JDK 22.0.2
+* Gradle version: 8.8
+
+## Topics:
+* API documentation
+* Web client
+* Observability
+* Distributed Tracing
+* Circuit breaker
+* Security
+* Exception handling
+* Containerization
+* OpenShift Deployment
+* Service Mesh
+* Native image
+* API Gateway
+
+## APIs and Frameworks:
+* Spring:
+ * Spring Boot, Spring Data, Spring Security, Spring Cloud
+* API documentation:
+  * Open API (Swagger)
+* Telemetry, Observability:
+  * Open telemetry, Open Tracing, Micrometer, Zipkin, Jaeger, Kiali, Grafana, SigNoz
+* Security
+  * JWT
+* CI/CD
+  * Tekton, ArgoCD
+* Misc:
+  * Lombok, GraalVM / Mandrel, Helm, Kustomize
+
+
+## Workshops:
 Each workshop demo a one or a set of APIs/functionalities. A workshop maps to a branch. A Milestone maps to a tag
 The main branch reflects the latest
 Naming convention:
