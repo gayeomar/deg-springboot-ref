@@ -1,0 +1,15 @@
+
+rootProject.name = 'sbref'
+
+include 'service-01'
+include 'service-02'
+include 'service-03'
+
+//project(':service-01').projectDir = "$rootDir/service-01" as File
+//project(':service-02').projectDir = "$rootDir/service-02" as File
+//project(':service-03').projectDir = "$rootDir/service-03" as File
+
+//org.gradle.java.home = '/Library/Java/JavaVirtualMachines/graalvm-22.jdk/Contents/Home'
+//org.gradle.java.home = '/Library/Java/JavaVirtualMachines/graalvm-jdk-21/Contents/Home'
+
+

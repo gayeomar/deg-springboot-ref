@@ -1,0 +1,29 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: hello
+spec:
+  template:
+    metadata:
+      name: hello
+      annotations:
+        autoscaling.knative.dev/target: "2"
+        autoscaling.knative.dev/minScale: "0"
+        autoscaling.knative.dev/maxScale: "2"
+    spec:
+      containers:
+        #- image: image-registry.openshift-image-registry.svc:5000/default/hello:latest
+        - image: quay.io/deguene-admin/hello-en-jvm:latest
+          name: hello-en-jvm-container
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /demo/live
+          readinessProbe:
+            httpGet:
+              path: /demo/ready
+  traffic:
+    - tag: jvm
+      revisionName: hello-en-jvm
+      percent: 100
