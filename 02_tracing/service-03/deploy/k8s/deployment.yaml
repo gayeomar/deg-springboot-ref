@@ -4,22 +4,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: plantsbywebsphere8
-  name: plantsbywebsphere8
+    app: service-03
+  name: service-03
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: plantsbywebsphere8
+      app: service-03
   template:
     metadata:
       labels:
-        app: plantsbywebsphere8
+        app: service-03
     spec:
       containers:
-        - image: IMAGE_REFERENCE
+        - image: quay.io/deguene-admin/service-03:01
           imagePullPolicy: Always
-          name: plantsbywebsphere8
+          name: service-03
           ports:
-            - containerPort: 9080
+            - containerPort: 8082
               protocol: TCP

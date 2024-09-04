@@ -1,0 +1,8 @@
+
+docker build -t deguene/service-03:01 .
+
+docker run -d --rm -p8082:8082 --name hello deguene/service-03:01
+
+docker tag deguene/service-03:01 quay.io/deguene-admin/service-03:01
+
+docker push quay.io/deguene-admin/service-03:01

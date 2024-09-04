@@ -7,8 +7,8 @@ RUN gradle build --no-daemon
 
 FROM openjdk:22-jdk-slim
 
-EXPOSE 8080
+EXPOSE 8082
 
-COPY --from=build /project/build/libs/*.jar hello.jar
+COPY --from=build /project/build/libs/*.jar service-03.jar
 
-ENTRYPOINT ["java","-jar","hello.jar"]
+ENTRYPOINT ["java","-jar","service-03.jar"]

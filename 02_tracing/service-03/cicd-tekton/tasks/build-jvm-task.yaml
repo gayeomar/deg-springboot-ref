@@ -1,0 +1,35 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: build-jvm
+spec:
+  params:
+    - name: jdk-image
+      description: Java image for src build
+      #default: 'docker.io/gradle:8.7-jdk-21-and-22-alpine'
+      default: 'gradle:jdk22-graal' #'ghcr.io/graalvm/graalvm-ce:ol8-java11-22.3.3'
+  workspaces:
+    - name: src-build-workspace
+  steps:
+    - name: build
+      image: $(inputs.params.jdk-image)
+      workingDir: $(workspaces.src-build-workspace.path)/02_tracing/service-03
+      command: [ "/bin/bash" ]
+      args:
+        - -c
+        - |
+          set -e
+          pwd
+          echo $JAVA_HOME
+          ls -l $JAVA_HOME/bin
+          echo "1 ******"
+          ls -l
+          ./gradlew --version
+          #ls -a
+          ./gradlew build -x test --stacktrace --no-daemon
+          #gradle build -x test --no-daemon
+          #ls -la
+          echo "*********************"
+          ls -l ./build
+          echo "*********************"
+          ls -l ./build/libs
