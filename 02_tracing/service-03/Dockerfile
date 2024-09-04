@@ -9,6 +9,6 @@ FROM openjdk:22-jdk-slim
 
 EXPOSE 8082
 
-COPY --from=build /project/build/libs/*.jar service-03.jar
+COPY --from=build /project/build/libs/service-03-0.0.1-SNAPSHOT.jar service-03.jar
 
 ENTRYPOINT ["java","-jar","service-03.jar"]
