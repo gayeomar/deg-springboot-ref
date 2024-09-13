@@ -5,10 +5,10 @@ WORKDIR /project
 
 RUN gradle build --no-daemon
 
-FROM openjdk:22-jdk-slim
+FROM --platform=$BUILDPLATFORM openjdk:22
 
-EXPOSE 8080
+EXPOSE 8082
 
-COPY --from=build /project/build/libs/*.jar hello.jar
+COPY --from=build /project/build/libs/*.jar service-02.jar
 
-ENTRYPOINT ["java","-jar","hello.jar"]
+ENTRYPOINT ["java","-jar","service-02.jar"]
