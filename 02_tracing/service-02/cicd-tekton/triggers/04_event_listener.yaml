@@ -1,0 +1,11 @@
+apiVersion: triggers.tekton.dev/v1beta1
+kind: EventListener
+metadata:
+  name: deg-hello-eventlistener
+spec:
+  serviceAccountName: pipeline #build-bot
+  triggers:
+    - triggerRef: deg-hello-trigger
+  resources:
+    kubernetesResource:
+      serviceType: NodePort

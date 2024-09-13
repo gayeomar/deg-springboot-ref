@@ -1,0 +1,20 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: Trigger
+metadata:
+  name: deg-hello-trigger
+spec:
+  serviceAccountName: pipeline # build-bot
+  interceptors:
+    - ref:
+        name: "github"
+      params:
+        - name: "secretRef"
+          value:
+            secretName: github-interceptor-secret
+            secretKey: secretToken
+        - name: "eventTypes"
+          value: ["push"]
+  bindings:
+    - ref: deg-hello-triggerbinding
+  template:
+    ref: deg-hello-triggertemplate
