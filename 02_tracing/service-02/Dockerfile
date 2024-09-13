@@ -9,6 +9,6 @@ FROM --platform=$BUILDPLATFORM openjdk:22
 
 EXPOSE 8082
 
-COPY --from=build /project/build/libs/*.jar service-02.jar
+COPY --from=build /project/build/libs/service-02-0.0.1-SNAPSHOT.jar service-02.jar
 
 ENTRYPOINT ["java","-jar","service-02.jar"]
