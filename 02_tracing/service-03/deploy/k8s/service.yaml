@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: service-03
-  name: service-03
+  name: services-03
 spec:
   type: NodePort
   ports:

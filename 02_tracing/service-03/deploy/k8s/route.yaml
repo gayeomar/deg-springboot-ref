@@ -3,7 +3,7 @@ kind: Route
 metadata:
   labels:
     app: service-03
-  name: service-03
+  name: services-03
 spec:
   path:
     /
@@ -11,5 +11,5 @@ spec:
     targetPort: http
   to:
     kind: Service
-    name: service-03
+    name: services-03
     weight: 100

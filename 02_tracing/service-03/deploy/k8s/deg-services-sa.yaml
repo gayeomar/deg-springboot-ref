@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: deg-services-sa
+imagePullSecrets:
+  - name: docker-credentials
+  - name: deguene-admin-cicdtekton-pull-secret
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: deguene-admin-cicdtekton-pull-secret
+data:
+  .dockerconfigjson: ewogICJhdXRocyI6IHsKICAgICJxdWF5LmlvIjogewogICAgICAiYXV0aCI6ICJaR1ZuZFdWdVpTMWhaRzFwYml0amFXTmtkR1ZyZEc5dU9qRllWa3BVTXpOU1RERkdTMFZKTlZWS1ZUSlBNa3hXUmxaVU1WbFpSMWswTkROV05ETTRWRXREVTBNMFdsTkVWVEpRTVRoRVVVaFZOekpRVXpoUU9FOD0iLAogICAgICAiZW1haWwiOiAiIgogICAgfQogIH0KfQ==
+type: kubernetes.io/dockerconfigjson
+---
+kind: Secret
+apiVersion: v1
+metadata:
+  name: docker-credentials
+type: Opaque
+stringData:
+  config.json: "{\"auths\":{\"quay.io\":{\"username\":\"deguene-admin\",\"password\":\"degueneLLC@61\",\"email\":\"omar@deguene.com\",\"auth\":\"ZGVndWVuZS1hZG1pbjpkZWd1ZW5lTExDQDYx\"}}}"
