@@ -7,11 +7,11 @@ spec:
     namespace: og-appset
     server: 'https://kubernetes.default.svc'
   source:
-    path: deployment/openshift
-    repoURL: 'https://github.com/gayeomar/deg-springboot-ref/02_tracing/service-03/deploy/argocd'
+    path: '02_tracing/service-03/deploy/argocd'
+    repoURL: 'https://github.com/gayeomar/deg-springboot-ref/'
     targetRevision: HEAD
     directory:
-      recurse: true
+      recurse: false
   project: default
   syncPolicy:
     automated:
